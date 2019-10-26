@@ -45,11 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035ad71ad8caec74a9b4c24093780198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p_nextLevels:
-  - {fileID: 8172615051348064368, guid: c5674d010c8bd344e8cef010fd39554d, type: 3}
-  - {fileID: 4905234320701758673, guid: eba298eba24741843b462e2f47f9895c, type: 3}
-  - {fileID: 760223714511935860, guid: bd1b32c7fe8e5414bade613824222141, type: 3}
-  - {fileID: 4905234320701758673, guid: 643bfcfd51ddc804f98c13d704471626, type: 3}
+  p_nextLevels: []
   m_levelLength: 300
 --- !u!1 &4905234321149010536
 GameObject:
