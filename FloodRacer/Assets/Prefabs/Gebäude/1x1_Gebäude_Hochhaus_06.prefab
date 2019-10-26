@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5401202828632809529}
   - component: {fileID: 48682452564414390}
+  - component: {fileID: 3629434423797206681}
+  - component: {fileID: 7564359070926943647}
   m_Layer: 0
   m_Name: "1x1_Geb\xE4ude_Hochhaus_06"
   m_TagString: Buildings
@@ -45,6 +47,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9, y: 10, z: 9}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!111 &3629434423797206681
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820346750144549180}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e216745819f5acd4785635885e7638df, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: e216745819f5acd4785635885e7638df, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!54 &7564359070926943647
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820346750144549180}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &4965976730498718816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52,16 +86,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5401202828632809529}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: c3bbf1900464ecf4da59497b55a02422,
-        type: 3}
-      propertyPath: m_Name
-      value: "Geb\xE4ude_Hochhaus_06"
-      objectReference: {fileID: 0}
-    - target: {fileID: -5605324677635123294, guid: c3bbf1900464ecf4da59497b55a02422,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cf9018fb8bac6104888f54b9d602f4dc, type: 2}
     - target: {fileID: -4216859302048453862, guid: c3bbf1900464ecf4da59497b55a02422,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -117,11 +141,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -425446253299057095, guid: c3bbf1900464ecf4da59497b55a02422,
+    - target: {fileID: -927199367670048503, guid: c3bbf1900464ecf4da59497b55a02422,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e9a3d9f8f7eea89428a6c2c642de95ee, type: 2}
+      propertyPath: m_Name
+      value: "Geb\xE4ude_Hochhaus_06"
+      objectReference: {fileID: 0}
     - target: {fileID: 751190008357701283, guid: c3bbf1900464ecf4da59497b55a02422,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -132,6 +156,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4d2275d0a41c71d43a54a77d1641c86e, type: 2}
+    - target: {fileID: -5605324677635123294, guid: c3bbf1900464ecf4da59497b55a02422,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf9018fb8bac6104888f54b9d602f4dc, type: 2}
+    - target: {fileID: -425446253299057095, guid: c3bbf1900464ecf4da59497b55a02422,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e9a3d9f8f7eea89428a6c2c642de95ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3bbf1900464ecf4da59497b55a02422, type: 3}
 --- !u!4 &112595797641721722 stripped

@@ -15,13 +15,15 @@ public class FloodHandler : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter(Collider other) {
+		print("trigger " + other.tag);
 		if(other.transform.root.tag == StringCollection.T_PLAYER) {
 			if(MenuHandler.Exists())
 				MenuHandler.s_instance.FinishLevel(Controle.s_instance.transform.position.z);
-		}else if(other.transform.root.tag == StringCollection.T_BUILDINGS) {
-			Animation tmp = other.transform.root.GetComponent<Animation>();
+		}else if(other.tag == StringCollection.T_BUILDINGS) {
+			print(true);
+			Animation tmp = other.GetComponent<Animation>();
 			if(tmp == null) {
-				Debug.LogError("building " + other.transform.root.gameObject.name + " has no animation");
+				Debug.LogError("building " + other.gameObject.name + " has no animation");
 				return;
 			}
 
