@@ -1,0 +1,9 @@
+Auto implementieren
+Materialien erstelen und applien
+gebäudeeinsturtzanimation  machen und triggern
+streckenparts homogener machen
+sounds importieren und implementieren
+menü hübsch machen
+Welle erstellen/hübsch machen
+wenn auto in wand zu buggy -fixen
+credits
