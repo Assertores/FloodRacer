@@ -6,6 +6,7 @@ public class FloodHandler : Singleton<FloodHandler> {
 
 	[SerializeField] AnimationCurve m_acelleration;
 	[SerializeField] float m_maxDistToPlayer = 100;
+	[SerializeField] AudioSource r_source;
 
 	private void Update() {
 		
@@ -13,9 +14,12 @@ public class FloodHandler : Singleton<FloodHandler> {
 	}
 
 	private void FixedUpdate() {
-		if(Mathf.Abs(Controle.s_instance.transform.position.z - transform.position.z) > m_maxDistToPlayer) {
+		float dist = Mathf.Abs(Controle.s_instance.transform.position.z - transform.position.z);
+		if(dist > m_maxDistToPlayer) {
 			transform.position = new Vector3(0, 0, Controle.s_instance.transform.position.z - m_maxDistToPlayer);
 		}
+
+		r_source.volume = Mathf.Lerp(1, 0, dist / m_maxDistToPlayer);
 	}
 
 	private void OnTriggerEnter(Collider other) {
