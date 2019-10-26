@@ -12,6 +12,9 @@ public class MenuHandler : Singleton<MenuHandler> {
 
 	[SerializeField] AudioMixer p_mixer;
 
+	public static System.Action ActivateMenu;
+	public static System.Action StartGame;
+
 	float m_bestScore;
 	float m_lastScore;
 
@@ -35,6 +38,8 @@ public class MenuHandler : Singleton<MenuHandler> {
 	}
 
 	public void FinishLevel(float score) {
+		ActivateMenu?.Invoke();
+
 		gameObject.SetActive(true);
 		StartCoroutine(IESlowDown(1));
 
@@ -49,6 +54,8 @@ public class MenuHandler : Singleton<MenuHandler> {
 	}
 
 	public void StartLevel() {
+		StartGame?.Invoke();
+
 		Time.timeScale = 1;
 		gameObject.SetActive(false);
 		SceneManager.LoadScene(StringCollection.S_INGAME);

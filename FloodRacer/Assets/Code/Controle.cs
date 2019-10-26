@@ -15,6 +15,11 @@ public class Controle : Singleton<Controle> {
 	[SerializeField] TextMeshProUGUI r_score;
 	[SerializeField] TextMeshProUGUI r_tsunamiDist;
 
+	[SerializeField] AudioSource r_source;
+	[SerializeField] AudioSource r_crash;
+	[SerializeField] AudioClip m_speedUp;
+	[SerializeField] AudioClip m_break;
+
 	Vector2 inputDir;
 	void Start() {
 		if(!r_rb) {
@@ -22,7 +27,46 @@ public class Controle : Singleton<Controle> {
 			Destroy(this);
 			return;
 		}
+		if(!r_source) {
+			Debug.LogError("no audio souce for car");
+			Destroy(this);
+			return;
+		}
+		if(!r_crash) {
+			Debug.LogError("no crash audio source for car");
+			Destroy(this);
+			return;
+		}
+		if(!m_speedUp) {
+			Debug.LogError("no speed up sound set");
+			Destroy(this);
+			return;
+		}
+		if(!m_break) {
+			Debug.LogError("no break sound set");
+			Destroy(this);
+			return;
+		}
 		//m_rb.velocity = new Vector3(0, 0, 1);
+
+		MenuHandler.ActivateMenu += OnLoss;
+		MenuHandler.StartGame += OnLevelStart;
+	}
+
+	private void OnDestroy() {
+		print("i got destroied");
+	}
+
+	void OnLevelStart() {
+		r_source.enabled = true;
+		r_crash.enabled = true;
+		r_rb.isKinematic = false;
+	}
+
+	void OnLoss() {
+		r_source.enabled = false;
+		r_crash.enabled = false;
+		r_rb.isKinematic = true;
 	}
 
 	void Update() {
@@ -56,6 +100,10 @@ public class Controle : Singleton<Controle> {
 
 		r_car.rotation = Quaternion.LookRotation(new Vector3(acselleration.y, 0, acselleration.x));
 
+	}
 
+	private void OnCollisionEnter(Collision collision) {
+		if(!r_crash.isPlaying)
+			r_crash.Play();
 	}
 }

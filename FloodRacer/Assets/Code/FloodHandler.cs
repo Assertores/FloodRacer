@@ -20,7 +20,7 @@ public class FloodHandler : Singleton<FloodHandler> {
 
 	private void OnTriggerEnter(Collider other) {
 		print("trigger " + other.tag);
-		if(other.transform.root.tag == StringCollection.T_PLAYER) {
+		if(other.tag == StringCollection.T_PLAYER) {
 			if(MenuHandler.Exists())
 				MenuHandler.s_instance.FinishLevel(Controle.s_instance.transform.position.z);
 		}else if(other.tag == StringCollection.T_BUILDINGS) {
