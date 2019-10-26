@@ -10,4 +10,5 @@ public static class StringCollection {
 	public const string S_INGAME = "InGame";
 
 	public const string T_PLAYER = "Player";
+	public const string T_BUILDINGS = "Buildings";
 }
