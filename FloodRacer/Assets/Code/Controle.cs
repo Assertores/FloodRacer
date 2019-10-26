@@ -27,7 +27,11 @@ public class Controle : Singleton<Controle> {
 
 	void Update() {
 		r_score.text = transform.position.z.ToString("F2") + "m";
-		r_tsunamiDist.text = (transform.position.z - FloodHandler.s_instance.transform.position.z).ToString("F2") + "m";
+		float dist = transform.position.z -FloodHandler.s_instance.transform.position.z;
+		if(dist < 98)
+			r_tsunamiDist.text = dist.ToString("F2") + "m";
+		else
+			r_tsunamiDist.text = "Far Away";
 
 		inputDir = new Vector2(Input.GetAxis(StringCollection.A_VERTICAL), Input.GetAxis(StringCollection.A_HORIZONTAL)).normalized;
 		Vector2 vel = new Vector2(r_rb.velocity.z, r_rb.velocity.x);
