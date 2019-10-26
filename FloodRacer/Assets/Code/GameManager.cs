@@ -33,8 +33,6 @@ public class GameManager : Singleton<GameManager> {
 			return;
 		}
 
-		DontDestroyOnLoad(this.gameObject);
-
 		GameObject tmp = Instantiate(p_startLevel);
 		m_currentLevel = CheckNextLevel(tmp);
 
