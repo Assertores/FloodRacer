@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class FloodHandler : MonoBehaviour {
 
-	[SerializeField] float m_floodaccseleration = 10;
-	[SerializeField] float m_startSpeed = 100;
+	[SerializeField] AnimationCurve m_acelleration;
 
 	private void Update() {
-		transform.position += new Vector3(0, 0,( m_floodaccseleration * Time.timeSinceLevelLoad + m_startSpeed) * Time.deltaTime);
+		transform.position += new Vector3(0, 0, m_acelleration.Evaluate(Time.timeSinceLevelLoad) * Time.deltaTime);
 	}
 
 	private void OnTriggerEnter(Collider other) {
