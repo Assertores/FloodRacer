@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4575294993849260898}
   m_Layer: 0
   m_Name: "1x1_Geb\xE4ude_Hochhaus_01"
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,11 +52,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 69763503758956012}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 52f6edf8305e6ca45846f9edb1fe87f4,
-        type: 3}
-      propertyPath: m_Name
-      value: "Geb\xE4ude_Hochhaus_01"
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 52f6edf8305e6ca45846f9edb1fe87f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -111,6 +106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 52f6edf8305e6ca45846f9edb1fe87f4,
+        type: 3}
+      propertyPath: m_Name
+      value: "Geb\xE4ude_Hochhaus_01"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52f6edf8305e6ca45846f9edb1fe87f4, type: 3}
