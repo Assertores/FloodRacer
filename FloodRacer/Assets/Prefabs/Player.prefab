@@ -161,7 +161,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   r_rb: {fileID: 4377630588350088905}
-  m_maxSpeed: 20
+  m_exelerationDump:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.05
+      outSlope: -0.05
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 20
+      value: 0
+      inSlope: -0.24095376
+      outSlope: -0.24095376
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.025449181
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_exelerationMultiplyer: 10
+  m_turningForce:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 6.1645393
+      value: 1.0033823
+      inSlope: -0.00031942315
+      outSlope: -0.00031942315
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.102465056
+    - serializedVersion: 3
+      time: 13.5
+      value: 1.0000062
+      inSlope: -0.15383008
+      outSlope: -0.15383008
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.027101304
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 17.6
+      value: 0.600015
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_turningForceMultiplyer: 100
 --- !u!54 &4377630588350088905
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -171,12 +238,12 @@ Rigidbody:
   m_GameObject: {fileID: 3603829404866412698}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1.23
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1 &4824538417873281052
 GameObject:
@@ -280,7 +347,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 6c894148b002c8e44a8e020bc47aab42, type: 3}
+  - {fileID: 2100000, guid: 0185dea156c5cb441a977eb3e045ca28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
