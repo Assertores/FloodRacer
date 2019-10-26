@@ -37,7 +37,7 @@ public class FillLevelWithValues : EditorWindow {
 		if(GUILayout.Button("Randomize")) {
 			for(int i = 0; i < area.width / 10; i++) {
 				for(int j = 0; j < area.height / 10; j++) {
-					GameObject tmp = Instantiate(obj[Random.Range(0, obj.Length)]);
+					GameObject tmp = (GameObject)PrefabUtility.InstantiatePrefab(obj[Random.Range(0, obj.Length)]);
 					tmp.transform.position = new Vector3(area.x + i * 10, 0, area.y + j * 10);
 				}
 			}
