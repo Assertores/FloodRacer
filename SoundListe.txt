@@ -4,6 +4,7 @@ Auto Sounds:
 Motorengeräusch (idle,beschleunigung,quietschen,bremsen)
 
 Skid - http://bbcsfx.acropolis.org.uk/?cat=cars&q=car
+Horn - http://bbcsfx.acropolis.org.uk/?cat=cars&page=2&q=car
 
 Auto (crash)
 
