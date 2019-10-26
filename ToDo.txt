@@ -1,9 +1,10 @@
-Auto implementieren
-Materialien erstelen und applien
-gebäudeeinsturtzanimation  machen und triggern
-streckenparts homogener machen
-sounds importieren und implementieren
-menü hübsch machen
-Welle erstellen/hübsch machen
-wenn auto in wand zu buggy -fixen
-credits
+Auto implementieren - done
+Materialien erstellen und applien - done
+gebäudeeinsturtzanimation  machen und triggern -done 
+streckenparts homogener machen - to do / done
+sounds importieren und implementieren - to do
+menü hübsch machen - to do
+Welle erstellen/hübsch machen - done
+wenn auto in wand zu buggy -fixen - done
+credits - to do
+Logo machen - to do
