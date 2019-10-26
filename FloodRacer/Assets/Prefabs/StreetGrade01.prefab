@@ -38,11 +38,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 303024376248713132}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: a4273845b6c0f5145ad918a8b771b728,
-        type: 3}
-      propertyPath: m_Name
-      value: "Stra\xDFe_gerade_01"
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a4273845b6c0f5145ad918a8b771b728,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,6 +93,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a4273845b6c0f5145ad918a8b771b728,
+        type: 3}
+      propertyPath: m_Name
+      value: "Stra\xDFe_gerade_01"
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: a4273845b6c0f5145ad918a8b771b728,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d2275d0a41c71d43a54a77d1641c86e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4273845b6c0f5145ad918a8b771b728, type: 3}
 --- !u!4 &4425396762091085238 stripped
