@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controle : MonoBehaviour {
+public class Controle : Singleton<Controle> {
 
 	[SerializeField] Rigidbody r_rb;
 	[SerializeField] AnimationCurve m_exelerationDump;
+	[SerializeField] float m_exelerationMultiplyer;
 	[SerializeField] AnimationCurve m_turningForce;
+	[SerializeField] float m_turningForceMultiplyer;
 
 	Vector2 inputDir;
 	void Start() {
@@ -27,8 +29,8 @@ public class Controle : MonoBehaviour {
 		if(vel.magnitude < 0.01f)
 			vel = new Vector2(1, 0);
 
-		float alongVel = Vector2.Dot(inputDir, vel.normalized);
-		float ortogonalVel = Vector2.Dot(inputDir, new Vector2(-vel.y, vel.x).normalized);
+		float alongVel = Vector2.Dot(inputDir, vel.normalized) * m_exelerationMultiplyer;
+		float ortogonalVel = Vector2.Dot(inputDir, new Vector2(-vel.y, vel.x).normalized) * m_turningForceMultiplyer;
 
 		alongVel *= m_exelerationDump.Evaluate(vel.magnitude);
 		ortogonalVel *= m_turningForce.Evaluate(vel.magnitude);
@@ -38,19 +40,13 @@ public class Controle : MonoBehaviour {
 
 		Vector2 acselleration = a+o;
 
-		Debug.Log(alongVel);
-
-		/*Debug.DrawRay(r_rb.position + new Vector3(10,0,0), new Vector3(a.y, 0, a.x), Color.green);
-		Debug.DrawRay(r_rb.position, new Vector3(o.y, 0, o.x), Color.blue);
-		Debug.DrawRay(r_rb.position, new Vector3(vel.y, 0, vel.x), Color.magenta);
-		Debug.DrawRay(r_rb.position, new Vector3(acselleration.y, 0, acselleration.x), Color.red);*/
-
+		//Debug.Log(vel.magnitude);
 		Debug.DrawRay(new Vector3(0, 0, -10) + new Vector3(o.y, 0, o.x), new Vector3(a.y,0,a.x), Color.green);
 		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(o.y,0,o.x), Color.blue);
 		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(vel.y, 0, vel.x), Color.magenta);
 		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(inputDir.y, 0, inputDir.x), Color.red);
 		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(acselleration.y, 0, acselleration.x), Color.cyan);
 
-		r_rb.velocity += new Vector3(acselleration.y,0,acselleration.x);
+		r_rb.velocity += new Vector3(acselleration.y,0,acselleration.x) * Time.deltaTime;
 	}
 }
