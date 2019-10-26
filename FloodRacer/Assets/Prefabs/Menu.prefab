@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   r_bestScore: {fileID: 7634430383444487566}
   r_lastScore: {fileID: 6134432521069867268}
-  p_mixer: {fileID: 0}
+  p_mixer: {fileID: 24100000, guid: 90d237adf54604344be1b32094e465ed, type: 2}
 --- !u!1 &7604465585189075675
 GameObject:
   m_ObjectHideFlags: 0

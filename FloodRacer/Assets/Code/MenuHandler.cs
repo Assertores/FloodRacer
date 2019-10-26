@@ -54,10 +54,12 @@ public class MenuHandler : Singleton<MenuHandler> {
 	}
 
 	public void StartLevel() {
+
 		StartGame?.Invoke();
+		gameObject.SetActive(false);
 
 		Time.timeScale = 1;
-		gameObject.SetActive(false);
+		
 		SceneManager.LoadScene(StringCollection.S_INGAME);
 	}
 
@@ -88,5 +90,7 @@ public class MenuHandler : Singleton<MenuHandler> {
 
 			yield return null;
 		}
+
+		Time.timeScale = 0;
 	}
 }

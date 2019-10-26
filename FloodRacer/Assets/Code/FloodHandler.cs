@@ -8,6 +8,17 @@ public class FloodHandler : Singleton<FloodHandler> {
 	[SerializeField] float m_maxDistToPlayer = 100;
 	[SerializeField] AudioSource r_source;
 
+	float pos;
+	private void Start() {
+		pos = transform.position.z;
+
+		MenuHandler.StartGame += DoRestart;
+	}
+
+	void DoRestart() {
+		transform.position = new Vector3(0,0, pos);
+	}
+
 	private void Update() {
 		
 		transform.position += new Vector3(0, 0, m_acelleration.Evaluate(Time.timeSinceLevelLoad) * Time.deltaTime);
@@ -41,6 +52,7 @@ public class FloodHandler : Singleton<FloodHandler> {
 
 	IEnumerator IEPlayAnim(Animation anim) {
 		yield return new WaitForSeconds(Random.Range(0.0f, 1.0f));
-		anim.Play();
+		if(anim)
+			anim.Play();
 	}
 }

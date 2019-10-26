@@ -58,6 +58,8 @@ public class Controle : Singleton<Controle> {
 	}
 
 	void OnLevelStart() {
+		transform.position = new Vector3(0, 0, 0);
+		r_car.rotation = Quaternion.LookRotation(transform.forward);
 		r_source.enabled = true;
 		r_crash.enabled = true;
 		r_rb.isKinematic = false;
