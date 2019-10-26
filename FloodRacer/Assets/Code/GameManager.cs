@@ -74,6 +74,10 @@ public class GameManager : Singleton<GameManager> {
 			return null;
 		}
 		foreach(var it in value.p_nextLevels) {
+			if(it == null) {
+				Debug.LogError("an element in the next level list is missing");
+				return null;
+			}
 			if(!it.GetComponent<LevelHandler>()) {
 				Debug.LogError("the level " + it.name + " in next levels has no level handler");
 				return null;

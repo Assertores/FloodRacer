@@ -6,4 +6,6 @@ public static class StringCollection {
 
 	public const string A_HORIZONTAL = "Horizontal";
 	public const string A_VERTICAL = "Vertical";
+
+	public const string S_INGAME = "InGame";
 }
