@@ -1,0 +1,9 @@
+Game Sounds:
+
+Auto Sounds:
+Motorengeräusch (idle,beschleunigung,quietschen,bremsen)
+Auto (crash)
+
+Environment Sounds:
+Flutwelle (rauschen)
+Häuser (zerstören,explodieren)
