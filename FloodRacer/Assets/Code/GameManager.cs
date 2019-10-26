@@ -7,9 +7,6 @@ public class GameManager : Singleton<GameManager> {
 
 	[SerializeField] GameObject p_startLevel;
 
-	[SerializeField] GameObject r_flood;
-	[SerializeField] float m_floodaccseleration = 10;
-
 	int m_levelCount = 0;
 
 	LevelHandler m_currentLevel;
@@ -27,11 +24,6 @@ public class GameManager : Singleton<GameManager> {
 			Destroy(this);
 			return;
 		}
-		if(!r_flood) {
-			Debug.LogError("no flood reference set");
-			Destroy(this);
-			return;
-		}
 
 		GameObject tmp = Instantiate(p_startLevel);
 		m_currentLevel = CheckNextLevel(tmp);
@@ -39,9 +31,7 @@ public class GameManager : Singleton<GameManager> {
 		m_loadedLevels.Enqueue(tmp);
 	}
 
-	private void Update() {
-		r_flood.transform.position += new Vector3(0, 0, Mathf.Sqrt(1 / m_floodaccseleration * Time.timeSinceLevelLoad) * Time.deltaTime);
-	}
+	
 
 	void FixedUpdate() {
 		if(Controle.s_instance.transform.position.z > (m_currentLevel.transform.position.z + m_currentLevel.m_levelLength/2)) {

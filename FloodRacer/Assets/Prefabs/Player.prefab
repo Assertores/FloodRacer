@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3603829403061601979}
   - component: {fileID: 3603829403061601980}
   - component: {fileID: 3603829403061601981}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3603829404592022823}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: CameraAncor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,9 +125,9 @@ GameObject:
   - component: {fileID: 3603829404866412696}
   - component: {fileID: 5575019386158540947}
   - component: {fileID: 4377630588350088905}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,6 +229,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   m_turningForceMultiplyer: 100
+  r_car: {fileID: 7297943335536227070}
 --- !u!54 &4377630588350088905
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -255,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1017781776137905245}
   - component: {fileID: 7648955441610497578}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +302,7 @@ GameObject:
   - component: {fileID: 6093629239000526716}
   - component: {fileID: 1465357638123081994}
   - component: {fileID: 4766070985991135224}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7297943335536227070}
   - component: {fileID: 7720035015624009355}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: CarAncor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +408,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5977605017949357578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 134dbbb187d1c7e43b2531f00356fcc2, type: 3}
   m_Name: 

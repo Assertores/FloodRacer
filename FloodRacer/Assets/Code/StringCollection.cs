@@ -8,4 +8,6 @@ public static class StringCollection {
 	public const string A_VERTICAL = "Vertical";
 
 	public const string S_INGAME = "InGame";
+
+	public const string T_PLAYER = "Player";
 }

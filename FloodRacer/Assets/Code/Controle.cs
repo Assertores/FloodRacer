@@ -9,6 +9,7 @@ public class Controle : Singleton<Controle> {
 	[SerializeField] float m_exelerationMultiplyer;
 	[SerializeField] AnimationCurve m_turningForce;
 	[SerializeField] float m_turningForceMultiplyer;
+	[SerializeField] Transform r_car;
 
 	Vector2 inputDir;
 	void Start() {
@@ -48,5 +49,7 @@ public class Controle : Singleton<Controle> {
 		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(acselleration.y, 0, acselleration.x), Color.cyan);
 
 		r_rb.velocity += new Vector3(acselleration.y,0,acselleration.x) * Time.deltaTime;
+
+		r_car.rotation = Quaternion.LookRotation(new Vector3(acselleration.y, 0, acselleration.x));
 	}
 }
