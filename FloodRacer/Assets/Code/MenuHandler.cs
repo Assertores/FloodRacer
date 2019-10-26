@@ -70,7 +70,7 @@ public class MenuHandler : Singleton<MenuHandler> {
 	bool h_isMuted;
 	public void Mute() {
 		h_isMuted = !h_isMuted;
-		p_mixer.SetFloat(StringCollection.G_MASTER, h_isMuted ? 0 : 1);
+		p_mixer.SetFloat(StringCollection.G_MASTER, h_isMuted ? -80 : 0);
 	}
 
 	public void ResetScore() {
