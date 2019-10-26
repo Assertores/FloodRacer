@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Audio;
 
 public class MenuHandler : Singleton<MenuHandler> {
 
 	[SerializeField] TextMeshProUGUI r_bestScore;
 	[SerializeField] TextMeshProUGUI r_lastScore;
+
+	[SerializeField] AudioMixer p_mixer;
 
 	float m_bestScore;
 	float m_lastScore;
@@ -55,8 +58,10 @@ public class MenuHandler : Singleton<MenuHandler> {
 		Application.Quit();
 	}
 
+	bool h_isMuted;
 	public void Mute() {
-		//TODO: mute Master
+		h_isMuted = !h_isMuted;
+		p_mixer.SetFloat(StringCollection.G_MASTER, h_isMuted ? 0 : 1);
 	}
 
 	public void ResetScore() {

@@ -11,4 +11,6 @@ public static class StringCollection {
 
 	public const string T_PLAYER = "Player";
 	public const string T_BUILDINGS = "Buildings";
+
+	public const string G_MASTER = "MasterVolume";
 }
