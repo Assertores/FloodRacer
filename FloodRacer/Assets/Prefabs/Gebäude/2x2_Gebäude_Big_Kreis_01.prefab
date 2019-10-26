@@ -52,11 +52,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5153079899959353951}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 5fb6e6db753d11e40b62b8fa20ed2ae0,
-        type: 3}
-      propertyPath: m_Name
-      value: "Geb\xE4ude_Big_Kreis_01"
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5fb6e6db753d11e40b62b8fa20ed2ae0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,7 +60,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5fb6e6db753d11e40b62b8fa20ed2ae0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5fb6e6db753d11e40b62b8fa20ed2ae0,
         type: 3}
@@ -111,6 +106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 5fb6e6db753d11e40b62b8fa20ed2ae0,
+        type: 3}
+      propertyPath: m_Name
+      value: "Geb\xE4ude_Big_Kreis_01"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fb6e6db753d11e40b62b8fa20ed2ae0, type: 3}
