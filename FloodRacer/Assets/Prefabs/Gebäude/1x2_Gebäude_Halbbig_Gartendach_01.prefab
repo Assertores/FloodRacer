@@ -57,6 +57,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Geb\xE4ude_Halbbig_Gartendach_01"
       objectReference: {fileID: 0}
+    - target: {fileID: -6410149597304472066, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aba4e1f40ffadae408d246178ce69c5f, type: 2}
+    - target: {fileID: -5618995511498035964, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec9120756e2fd56449d21693829aeb3d, type: 2}
+    - target: {fileID: -4633481764163866806, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 983c3829d58907e42a884e143b9a5f10, type: 2}
     - target: {fileID: -4216859302048453862, guid: e638f585cae25bc4daf1b1c478c37459,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -112,6 +127,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3800340073892316419, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aba4e1f40ffadae408d246178ce69c5f, type: 2}
+    - target: {fileID: -425446253299057095, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e9a3d9f8f7eea89428a6c2c642de95ee, type: 2}
+    - target: {fileID: -147564142565522512, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec9120756e2fd56449d21693829aeb3d, type: 2}
+    - target: {fileID: -46646679751217393, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aba4e1f40ffadae408d246178ce69c5f, type: 2}
+    - target: {fileID: 751190008357701283, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a063e0087cd2914449bcaa553da7835f, type: 2}
+    - target: {fileID: 3079604597106545546, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aba4e1f40ffadae408d246178ce69c5f, type: 2}
+    - target: {fileID: 5793682368782939300, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec9120756e2fd56449d21693829aeb3d, type: 2}
+    - target: {fileID: 7047220735998746489, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec9120756e2fd56449d21693829aeb3d, type: 2}
+    - target: {fileID: 8352407209833735657, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aba4e1f40ffadae408d246178ce69c5f, type: 2}
+    - target: {fileID: 8904868475838549856, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d2275d0a41c71d43a54a77d1641c86e, type: 2}
+    - target: {fileID: 9137388100800655678, guid: e638f585cae25bc4daf1b1c478c37459,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec9120756e2fd56449d21693829aeb3d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e638f585cae25bc4daf1b1c478c37459, type: 3}
 --- !u!4 &8836931682828872358 stripped

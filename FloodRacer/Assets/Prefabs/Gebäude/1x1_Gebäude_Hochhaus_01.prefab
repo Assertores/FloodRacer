@@ -52,6 +52,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 69763503758956012}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 52f6edf8305e6ca45846f9edb1fe87f4,
+        type: 3}
+      propertyPath: m_Name
+      value: "Geb\xE4ude_Hochhaus_01"
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 52f6edf8305e6ca45846f9edb1fe87f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -107,11 +112,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 52f6edf8305e6ca45846f9edb1fe87f4,
+    - target: {fileID: -4513057326584232104, guid: 52f6edf8305e6ca45846f9edb1fe87f4,
         type: 3}
-      propertyPath: m_Name
-      value: "Geb\xE4ude_Hochhaus_01"
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d2275d0a41c71d43a54a77d1641c86e, type: 2}
+    - target: {fileID: -425446253299057095, guid: 52f6edf8305e6ca45846f9edb1fe87f4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e9a3d9f8f7eea89428a6c2c642de95ee, type: 2}
+    - target: {fileID: 751190008357701283, guid: 52f6edf8305e6ca45846f9edb1fe87f4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 396a7d6b19fac6d4f92f3a8e7f93b383, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52f6edf8305e6ca45846f9edb1fe87f4, type: 3}
 --- !u!4 &2303892578719139239 stripped
