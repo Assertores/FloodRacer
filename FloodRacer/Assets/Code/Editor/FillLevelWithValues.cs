@@ -17,9 +17,18 @@ public class FillLevelWithValues : EditorWindow {
 	void OnGUI() {
 		area = EditorGUILayout.RectField(area);
 
-		size = EditorGUILayout.IntField(size);
-		if(size != obj.Length)
+		size = EditorGUILayout.DelayedIntField(size);
+
+		if(size != obj.Length) {
+			GameObject[] tmp = new GameObject[obj.Length];
+			for(int i = 0; i < obj.Length; i++) {
+				tmp[i] = obj[i];
+			}
 			obj = new GameObject[size];
+			for(int i = 0; i < ((obj.Length < tmp.Length) ? obj.Length : tmp.Length); i++) {
+				obj[i] = tmp[i];
+			}
+		}
 
 		for(int i = 0; i < size; i++) {
 			obj[i] = (GameObject)EditorGUILayout.ObjectField(obj[i], typeof(GameObject));
