@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p_nextLevels:
   - {fileID: 8172615051348064368, guid: c5674d010c8bd344e8cef010fd39554d, type: 3}
-  - {fileID: 4905234320701758673}
+  - {fileID: 4905234320701758673, guid: eba298eba24741843b462e2f47f9895c, type: 3}
   m_levelLength: 300
 --- !u!1 &4905234321149010536
 GameObject:
