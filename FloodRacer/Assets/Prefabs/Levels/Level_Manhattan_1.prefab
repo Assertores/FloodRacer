@@ -337,6 +337,7 @@ MonoBehaviour:
   p_nextLevels:
   - {fileID: 4905234320701758673, guid: 0f7c5fb646257cb48a695bd2ed91368d, type: 3}
   - {fileID: 8172615051348064368, guid: c5674d010c8bd344e8cef010fd39554d, type: 3}
+  - {fileID: 4905234320701758673, guid: eba298eba24741843b462e2f47f9895c, type: 3}
   m_levelLength: 300
 --- !u!1001 &553026999909084217
 PrefabInstance:
