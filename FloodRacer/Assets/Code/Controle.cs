@@ -41,13 +41,6 @@ public class Controle : Singleton<Controle> {
 
 		Vector2 acselleration = a+o;
 
-		//Debug.Log(vel.magnitude);
-		Debug.DrawRay(new Vector3(0, 0, -10) + new Vector3(o.y, 0, o.x), new Vector3(a.y,0,a.x), Color.green);
-		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(o.y,0,o.x), Color.blue);
-		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(vel.y, 0, vel.x), Color.magenta);
-		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(inputDir.y, 0, inputDir.x), Color.red);
-		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(acselleration.y, 0, acselleration.x), Color.cyan);
-
 		r_rb.velocity += new Vector3(acselleration.y,0,acselleration.x) * Time.deltaTime;
 
 		r_car.rotation = Quaternion.LookRotation(new Vector3(acselleration.y, 0, acselleration.x));

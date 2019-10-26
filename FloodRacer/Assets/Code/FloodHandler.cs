@@ -8,10 +8,14 @@ public class FloodHandler : MonoBehaviour {
 	[SerializeField] float m_maxDistToPlayer = 100;
 
 	private void Update() {
+		
+		transform.position += new Vector3(0, 0, m_acelleration.Evaluate(Time.timeSinceLevelLoad) * Time.deltaTime);
+	}
+
+	private void FixedUpdate() {
 		if(Mathf.Abs(Controle.s_instance.transform.position.z - transform.position.z) > m_maxDistToPlayer) {
 			transform.position = new Vector3(0, 0, Controle.s_instance.transform.position.z - m_maxDistToPlayer);
 		}
-		transform.position += new Vector3(0, 0, m_acelleration.Evaluate(Time.timeSinceLevelLoad) * Time.deltaTime);
 	}
 
 	private void OnTriggerEnter(Collider other) {
@@ -27,7 +31,12 @@ public class FloodHandler : MonoBehaviour {
 				return;
 			}
 
-			tmp.Play();
+			StartCoroutine(IEPlayAnim(tmp));
 		}
+	}
+
+	IEnumerator IEPlayAnim(Animation anim) {
+		yield return new WaitForSeconds(Random.Range(0.0f, 1.0f));
+		anim.Play();
 	}
 }
