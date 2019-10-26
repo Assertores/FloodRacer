@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloodHandler : MonoBehaviour {
+public class FloodHandler : Singleton<FloodHandler> {
 
 	[SerializeField] AnimationCurve m_acelleration;
 	[SerializeField] float m_maxDistToPlayer = 100;

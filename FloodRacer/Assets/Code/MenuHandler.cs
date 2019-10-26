@@ -26,8 +26,8 @@ public class MenuHandler : Singleton<MenuHandler> {
 
 		m_bestScore = PlayerPrefs.GetFloat("m_bestScore");
 
-		r_bestScore.text = m_bestScore.ToString();
-		r_lastScore.text = m_lastScore.ToString();
+		r_bestScore.text = m_bestScore.ToString("F2") + "m";
+		r_lastScore.text = m_lastScore.ToString("F2") + "m";
 		Time.timeScale = 0;
 	}
 
@@ -41,8 +41,8 @@ public class MenuHandler : Singleton<MenuHandler> {
 			PlayerPrefs.SetFloat("m_bestScore", m_bestScore);
 		}
 
-		r_bestScore.text = m_bestScore.ToString();
-		r_lastScore.text = m_lastScore.ToString();
+		r_bestScore.text = m_bestScore.ToString("F2") + "m";
+		r_lastScore.text = m_lastScore.ToString("F2") + "m";
 	}
 
 	public void StartLevel() {
@@ -64,8 +64,8 @@ public class MenuHandler : Singleton<MenuHandler> {
 		m_bestScore = 0;
 		m_lastScore = 0;
 
-		r_bestScore.text = m_bestScore.ToString();
-		r_lastScore.text = m_lastScore.ToString();
+		r_bestScore.text = m_bestScore.ToString("F2") + "m";
+		r_lastScore.text = m_lastScore.ToString("F2") + "m";
 	}
 
 	IEnumerator IESlowDown(float duration) {

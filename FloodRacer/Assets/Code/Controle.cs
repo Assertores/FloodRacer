@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Controle : Singleton<Controle> {
 
@@ -10,6 +11,9 @@ public class Controle : Singleton<Controle> {
 	[SerializeField] AnimationCurve m_turningForce;
 	[SerializeField] float m_turningForceMultiplyer;
 	[SerializeField] Transform r_car;
+
+	[SerializeField] TextMeshProUGUI r_score;
+	[SerializeField] TextMeshProUGUI r_tsunamiDist;
 
 	Vector2 inputDir;
 	void Start() {
@@ -22,6 +26,9 @@ public class Controle : Singleton<Controle> {
 	}
 
 	void Update() {
+		r_score.text = transform.position.z.ToString("F2") + "m";
+		r_tsunamiDist.text = (transform.position.z - FloodHandler.s_instance.transform.position.z).ToString("F2") + "m";
+
 		inputDir = new Vector2(Input.GetAxis(StringCollection.A_VERTICAL), Input.GetAxis(StringCollection.A_HORIZONTAL)).normalized;
 		Vector2 vel = new Vector2(r_rb.velocity.z, r_rb.velocity.x);
 
@@ -44,5 +51,7 @@ public class Controle : Singleton<Controle> {
 		r_rb.velocity += new Vector3(acselleration.y,0,acselleration.x) * Time.deltaTime;
 
 		r_car.rotation = Quaternion.LookRotation(new Vector3(acselleration.y, 0, acselleration.x));
+
+
 	}
 }
