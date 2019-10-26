@@ -28,7 +28,7 @@ public class Controle : Singleton<Controle> {
 		if(inputDir.magnitude < 0.01f)
 			return;
 		if(vel.magnitude < 0.01f)
-			vel = new Vector2(1, 0);
+			vel = new Vector2(transform.forward.z, transform.forward.x) * 0.2f;
 
 		float alongVel = Vector2.Dot(inputDir, vel.normalized) * m_exelerationMultiplyer;
 		float ortogonalVel = Vector2.Dot(inputDir, new Vector2(-vel.y, vel.x).normalized) * m_turningForceMultiplyer;
