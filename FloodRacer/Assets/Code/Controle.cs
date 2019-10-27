@@ -17,12 +17,12 @@ public class Controle : Singleton<Controle> {
 	[SerializeField] TextMeshProUGUI r_score;
 	[SerializeField] TextMeshProUGUI r_tsunamiDist;
 	[SerializeField] Gradient m_color;
-	[SerializeField] Color m_normalColor;
+	Color m_normalColor;
 
-	[SerializeField] AudioSource r_source;
+	[SerializeField] AudioSource r_skid;
 	[SerializeField] AudioSource r_crash;
-	[SerializeField] AudioClip m_speedUp;
 	[SerializeField] AudioClip[] m_crashs;
+	[SerializeField] float m_angle = 40.0f;
 
 	Vector2 inputDir;
 	void Start() {
@@ -31,18 +31,13 @@ public class Controle : Singleton<Controle> {
 			Destroy(this);
 			return;
 		}
-		if(!r_source) {
+		if(!r_skid) {
 			Debug.LogError("no audio souce for car");
 			Destroy(this);
 			return;
 		}
 		if(!r_crash) {
 			Debug.LogError("no crash audio source for car");
-			Destroy(this);
-			return;
-		}
-		if(!m_speedUp) {
-			Debug.LogError("no speed up sound set");
 			Destroy(this);
 			return;
 		}
@@ -67,14 +62,14 @@ public class Controle : Singleton<Controle> {
 		r_ui.SetActive(true);
 		transform.position = new Vector3(0, 0, 0);
 		r_car.rotation = Quaternion.LookRotation(transform.forward);
-		r_source.enabled = true;
+		r_skid.enabled = true;
 		r_crash.enabled = true;
 		r_rb.isKinematic = false;
 	}
 
 	void OnLoss() {
 		r_ui.SetActive(false);
-		r_source.enabled = false;
+		r_skid.enabled = false;
 		r_crash.enabled = false;
 		r_rb.isKinematic = true;
 	}
@@ -116,10 +111,19 @@ public class Controle : Singleton<Controle> {
 
 		Vector2 acselleration = a+o;
 
+		float angle = Vector2.Angle(vel, acselleration);
+
+		Debug.Log(angle);
+
 		r_rb.velocity += new Vector3(acselleration.y,0,acselleration.x) * Time.deltaTime;
 
 		r_car.rotation = Quaternion.LookRotation(new Vector3(acselleration.y, 0, acselleration.x));
 
+		if(angle > m_angle) {
+			r_skid.enabled = true;
+		} else {
+			r_skid.enabled = false;
+		}
 
 		Debug.DrawRay(new Vector3(0, 0, -10) + new Vector3(o.y, 0, o.x), new Vector3(a.y, 0, a.x), Color.green);
 		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(o.y, 0, o.x), Color.blue);
