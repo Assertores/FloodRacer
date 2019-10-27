@@ -22,7 +22,7 @@ public class Controle : Singleton<Controle> {
 	[SerializeField] AudioSource r_source;
 	[SerializeField] AudioSource r_crash;
 	[SerializeField] AudioClip m_speedUp;
-	[SerializeField] AudioClip m_break;
+	[SerializeField] AudioClip[] m_crashs;
 
 	Vector2 inputDir;
 	void Start() {
@@ -46,8 +46,8 @@ public class Controle : Singleton<Controle> {
 			Destroy(this);
 			return;
 		}
-		if(!m_break) {
-			Debug.LogError("no break sound set");
+		if(m_crashs == null || m_crashs.Length == 0) {
+			Debug.LogError("no chrash sounds set");
 			Destroy(this);
 			return;
 		}
@@ -130,6 +130,7 @@ public class Controle : Singleton<Controle> {
 
 	private void OnCollisionEnter(Collision collision) {
 		if(!r_crash.isPlaying)
+			r_crash.clip = m_crashs[Random.Range(0, m_crashs.Length)];
 			r_crash.Play();
 	}
 }
