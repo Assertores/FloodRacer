@@ -54,8 +54,6 @@ MonoBehaviour:
   - {fileID: 7318963468288011094, guid: 84f9ed90fc3fac04c931d75f5d45d030, type: 3}
   - {fileID: 1182835849275028904, guid: c7898c49620c92744b6b69deb9ac1e49, type: 3}
   - {fileID: 3778736802227744191, guid: eaab47314e672694eab0808ea593fdb2, type: 3}
-  - {fileID: 26791706292245020, guid: 96db9ff9dae72774e8345d1528c1fcf8, type: 3}
-  - {fileID: 4762214460708061307, guid: dd9cb5bf3a944e84084e89afd3a39b0a, type: 3}
   m_levelLength: 110
 --- !u!1 &1546164053351496986
 GameObject:
