@@ -26,6 +26,9 @@ public class Controle : Singleton<Controle> {
 	[SerializeField] AudioClip[] m_crashs;
 	[SerializeField] float m_angle = 40.0f;
 
+	[SerializeField] GameObject r_cross;
+	Vector2 tmp;
+
 	Vector2 inputDir;
 	void Start() {
 		if(!r_rb) {
@@ -55,6 +58,12 @@ public class Controle : Singleton<Controle> {
 
 		MenuHandler.ActivateMenu += OnLoss;
 		MenuHandler.StartGame += OnLevelStart;
+
+		tmp = ((RectTransform)(r_cross.transform)).position;
+
+#if !UNITY_ANDROID
+		r_cross.SetActive(false);
+#endif
 	}
 
 	private void OnDestroy() {
@@ -95,7 +104,7 @@ public class Controle : Singleton<Controle> {
 		if(Input.touchCount > 0) {
 			Touch touch = Input.GetTouch(0);
 
-			inputDir = (touch.position - new Vector2(Screen.width / 2, Screen.height / 2)).normalized;
+			inputDir = (touch.position - tmp).normalized;
 			inputDir = new Vector2(inputDir.y, inputDir.x);
 		}
 
@@ -119,8 +128,6 @@ public class Controle : Singleton<Controle> {
 
 		float angle = Vector2.Angle(vel, acselleration);
 
-		Debug.Log(angle);
-
 		r_rb.velocity += new Vector3(acselleration.y,0,acselleration.x) * Time.deltaTime;
 
 		r_car.rotation = Quaternion.LookRotation(new Vector3(acselleration.y, 0, acselleration.x));
@@ -131,11 +138,12 @@ public class Controle : Singleton<Controle> {
 			r_skid.enabled = false;
 		}
 
+		/*
 		Debug.DrawRay(new Vector3(0, 0, -10) + new Vector3(o.y, 0, o.x), new Vector3(a.y, 0, a.x), Color.green);
 		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(o.y, 0, o.x), Color.blue);
 		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(vel.y, 0, vel.x), Color.magenta);
 		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(inputDir.y, 0, inputDir.x), Color.red);
-		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(acselleration.y, 0, acselleration.x), Color.cyan);
+		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(acselleration.y, 0, acselleration.x), Color.cyan);*/
 	}
 
 	private void OnCollisionEnter(Collision collision) {
