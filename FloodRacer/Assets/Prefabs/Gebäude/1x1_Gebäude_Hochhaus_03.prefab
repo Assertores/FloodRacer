@@ -125,7 +125,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: f220aee0d37df734fa813deaccb76ac8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f220aee0d37df734fa813deaccb76ac8,
         type: 3}
@@ -177,11 +177,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Geb\xE4ude_Hochhaus_03"
       objectReference: {fileID: 0}
-    - target: {fileID: 751190008357701283, guid: f220aee0d37df734fa813deaccb76ac8,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: bf68c24d03d2ad44b83d75a9c21ea1d7, type: 2}
     - target: {fileID: 8904868475838549856, guid: f220aee0d37df734fa813deaccb76ac8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -192,6 +187,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e9a3d9f8f7eea89428a6c2c642de95ee, type: 2}
+    - target: {fileID: 751190008357701283, guid: f220aee0d37df734fa813deaccb76ac8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf68c24d03d2ad44b83d75a9c21ea1d7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f220aee0d37df734fa813deaccb76ac8, type: 3}
 --- !u!4 &1732445991828242956 stripped

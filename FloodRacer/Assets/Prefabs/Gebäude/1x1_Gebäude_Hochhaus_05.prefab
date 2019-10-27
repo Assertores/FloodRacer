@@ -117,11 +117,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 382344549585773741}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 84010b009ff461041a776cf0705254c2,
-        type: 3}
-      propertyPath: m_Name
-      value: "Geb\xE4ude_Hochhaus_05"
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 84010b009ff461041a776cf0705254c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -130,7 +125,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 84010b009ff461041a776cf0705254c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 84010b009ff461041a776cf0705254c2,
         type: 3}
@@ -176,6 +171,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 84010b009ff461041a776cf0705254c2,
+        type: 3}
+      propertyPath: m_Name
+      value: "Geb\xE4ude_Hochhaus_05"
       objectReference: {fileID: 0}
     - target: {fileID: 751190008357701283, guid: 84010b009ff461041a776cf0705254c2,
         type: 3}
