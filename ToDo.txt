@@ -3,8 +3,8 @@ Materialien erstellen und applien - done
 gebäudeeinsturtzanimation  machen und triggern - done 
 streckenparts homogener machen - done
 sounds importieren und implementieren - done
-menü hübsch machen - to do
+menü hübsch machen - done
 Welle erstellen/hübsch machen - done
 wenn auto in wand zu buggy -fixen - done
 credits - done
-Logo machen - to do
+Logo machen - done
