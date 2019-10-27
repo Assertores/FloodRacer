@@ -1,8 +1,8 @@
 Auto implementieren - done
 Materialien erstellen und applien - done
 gebäudeeinsturtzanimation  machen und triggern - done 
-streckenparts homogener machen - to do / done
-sounds importieren und implementieren - in proggress
+streckenparts homogener machen - in proggress
+sounds importieren und implementieren - done
 menü hübsch machen - to do
 Welle erstellen/hübsch machen - in proggress
 wenn auto in wand zu buggy -fixen - done

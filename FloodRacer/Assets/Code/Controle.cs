@@ -11,6 +11,7 @@ public class Controle : Singleton<Controle> {
 	[SerializeField] AnimationCurve m_turningForce;
 	[SerializeField] float m_turningForceMultiplyer;
 	[SerializeField] Transform r_car;
+	[SerializeField] AnimationCurve m_tsunamiNearingExeleration;
 
 	[SerializeField] TextMeshProUGUI r_score;
 	[SerializeField] TextMeshProUGUI r_tsunamiDist;
@@ -90,7 +91,7 @@ public class Controle : Singleton<Controle> {
 		float alongVel = Vector2.Dot(inputDir, vel.normalized) * m_exelerationMultiplyer;
 		float ortogonalVel = Vector2.Dot(inputDir, new Vector2(-vel.y, vel.x).normalized) * m_turningForceMultiplyer;
 
-		alongVel *= m_exelerationDump.Evaluate(vel.magnitude);
+		alongVel *= m_exelerationDump.Evaluate(vel.magnitude) * m_tsunamiNearingExeleration.Evaluate(dist);
 		ortogonalVel *= m_turningForce.Evaluate(vel.magnitude);
 
 		Vector2 a = alongVel * vel.normalized;
@@ -102,6 +103,12 @@ public class Controle : Singleton<Controle> {
 
 		r_car.rotation = Quaternion.LookRotation(new Vector3(acselleration.y, 0, acselleration.x));
 
+
+		Debug.DrawRay(new Vector3(0, 0, -10) + new Vector3(o.y, 0, o.x), new Vector3(a.y, 0, a.x), Color.green);
+		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(o.y, 0, o.x), Color.blue);
+		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(vel.y, 0, vel.x), Color.magenta);
+		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(inputDir.y, 0, inputDir.x), Color.red);
+		Debug.DrawRay(new Vector3(0, 0, -10), new Vector3(acselleration.y, 0, acselleration.x), Color.cyan);
 	}
 
 	private void OnCollisionEnter(Collision collision) {
