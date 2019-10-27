@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5401202828632809529}
   - component: {fileID: 48682452564414390}
   - component: {fileID: 3629434423797206681}
-  - component: {fileID: 7564359070926943647}
+  - component: {fileID: 7738161393306137113}
   m_Layer: 0
   m_Name: "1x1_Geb\xE4ude_Hochhaus_06"
   m_TagString: Buildings
@@ -63,22 +63,19 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!54 &7564359070926943647
-Rigidbody:
+--- !u!114 &7738161393306137113
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820346750144549180}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f1fc6d189c9e44690050b4215ffd56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 3629434423797206681}
 --- !u!1 &7025240361211759772
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,26 +174,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Geb\xE4ude_Hochhaus_06"
       objectReference: {fileID: 0}
-    - target: {fileID: 751190008357701283, guid: c3bbf1900464ecf4da59497b55a02422,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cf9018fb8bac6104888f54b9d602f4dc, type: 2}
-    - target: {fileID: 8904868475838549856, guid: c3bbf1900464ecf4da59497b55a02422,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4d2275d0a41c71d43a54a77d1641c86e, type: 2}
-    - target: {fileID: -5605324677635123294, guid: c3bbf1900464ecf4da59497b55a02422,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cf9018fb8bac6104888f54b9d602f4dc, type: 2}
     - target: {fileID: -425446253299057095, guid: c3bbf1900464ecf4da59497b55a02422,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e9a3d9f8f7eea89428a6c2c642de95ee, type: 2}
+    - target: {fileID: 8904868475838549856, guid: c3bbf1900464ecf4da59497b55a02422,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d2275d0a41c71d43a54a77d1641c86e, type: 2}
+    - target: {fileID: 751190008357701283, guid: c3bbf1900464ecf4da59497b55a02422,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf9018fb8bac6104888f54b9d602f4dc, type: 2}
+    - target: {fileID: -5605324677635123294, guid: c3bbf1900464ecf4da59497b55a02422,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf9018fb8bac6104888f54b9d602f4dc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3bbf1900464ecf4da59497b55a02422, type: 3}
 --- !u!4 &112595797641721722 stripped

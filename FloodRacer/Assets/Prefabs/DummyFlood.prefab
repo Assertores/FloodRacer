@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2255009851778552564}
   - component: {fileID: 5874326068019765529}
-  - component: {fileID: 215853261166385098}
   - component: {fileID: 1575057109162372936}
   m_Layer: 0
   m_Name: DummyFlood
@@ -72,19 +71,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_maxDistToPlayer: 100
   r_source: {fileID: 1575057109162372936}
---- !u!65 &215853261166385098
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6010961003880378997}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1000, y: 10, z: 10}
-  m_Center: {x: 0, y: 3, z: -5.69}
 --- !u!82 &1575057109162372936
 AudioSource:
   m_ObjectHideFlags: 0

@@ -31,34 +31,14 @@ public class FloodHandler : Singleton<FloodHandler> {
 	}
 
 	private void FixedUpdate() {
-		float dist = Mathf.Abs(Controle.s_instance.transform.position.z - transform.position.z);
+		float dist = Controle.s_instance.transform.position.z - transform.position.z;
 		if(dist > m_maxDistToPlayer) {
 			transform.position = new Vector3(0, 0, Controle.s_instance.transform.position.z - m_maxDistToPlayer);
 		}
 
+		if(dist < 0)
+			MenuHandler.s_instance.FinishLevel(Controle.s_instance.transform.position.z);
+
 		r_source.volume = Mathf.Lerp(1, 0, dist / m_maxDistToPlayer);
-	}
-
-	private void OnTriggerEnter(Collider other) {
-		print("trigger " + other.tag);
-		if(other.tag == StringCollection.T_PLAYER) {
-			if(MenuHandler.Exists())
-				MenuHandler.s_instance.FinishLevel(Controle.s_instance.transform.position.z);
-		}else if(other.tag == StringCollection.T_BUILDINGS) {
-			print(true);
-			Animation tmp = other.GetComponent<Animation>();
-			if(tmp == null) {
-				Debug.LogError("building " + other.gameObject.name + " has no animation");
-				return;
-			}
-
-			StartCoroutine(IEPlayAnim(tmp));
-		}
-	}
-
-	IEnumerator IEPlayAnim(Animation anim) {
-		yield return new WaitForSeconds(Random.Range(0.0f, 1.0f));
-		if(anim)
-			anim.Play();
 	}
 }

@@ -98,7 +98,7 @@ public class Controle : Singleton<Controle> {
 			inputDir = new Vector2(inputDir.y, inputDir.x);
 		}
 
-			Vector2 vel = new Vector2(r_rb.velocity.z, r_rb.velocity.x);
+		Vector2 vel = new Vector2(r_rb.velocity.z, r_rb.velocity.x);
 
 		if(inputDir.magnitude < 0.01f)
 			return;
