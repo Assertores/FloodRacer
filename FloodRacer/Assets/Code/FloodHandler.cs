@@ -8,6 +8,12 @@ public class FloodHandler : Singleton<FloodHandler> {
 	[SerializeField] float m_maxDistToPlayer = 100;
 	[SerializeField] AudioSource r_source;
 
+	public float maxDist {
+		get {
+			return m_maxDistToPlayer;
+		}
+	}
+
 	float pos;
 	private void Start() {
 		pos = transform.position.z;

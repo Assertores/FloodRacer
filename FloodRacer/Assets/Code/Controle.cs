@@ -16,6 +16,8 @@ public class Controle : Singleton<Controle> {
 	[SerializeField] GameObject r_ui;
 	[SerializeField] TextMeshProUGUI r_score;
 	[SerializeField] TextMeshProUGUI r_tsunamiDist;
+	[SerializeField] Gradient m_color;
+	[SerializeField] Color m_normalColor;
 
 	[SerializeField] AudioSource r_source;
 	[SerializeField] AudioSource r_crash;
@@ -51,6 +53,8 @@ public class Controle : Singleton<Controle> {
 		}
 		//m_rb.velocity = new Vector3(0, 0, 1);
 
+		m_normalColor = m_color.Evaluate(1);
+
 		MenuHandler.ActivateMenu += OnLoss;
 		MenuHandler.StartGame += OnLevelStart;
 	}
@@ -78,10 +82,13 @@ public class Controle : Singleton<Controle> {
 	void Update() {
 		r_score.text = transform.position.z.ToString("F2") + "m";
 		float dist = transform.position.z -FloodHandler.s_instance.transform.position.z;
-		if(dist < 98)
+		if(dist < FloodHandler.s_instance.maxDist - 2) {
 			r_tsunamiDist.text = "! " + dist.ToString("F2") + "m !";
-		else
+			r_tsunamiDist.color = m_color.Evaluate(dist/(FloodHandler.s_instance.maxDist - 2));
+		} else {
 			r_tsunamiDist.text = "Far Away";
+			r_tsunamiDist.color = m_normalColor;
+		}
 
 		inputDir = new Vector2(Input.GetAxis(StringCollection.A_VERTICAL), Input.GetAxis(StringCollection.A_HORIZONTAL)).normalized;
 		if(Input.touchCount > 0) {
