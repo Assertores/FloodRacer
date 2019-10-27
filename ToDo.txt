@@ -1,10 +1,10 @@
 Auto implementieren - done
 Materialien erstellen und applien - done
 gebäudeeinsturtzanimation  machen und triggern - done 
-streckenparts homogener machen - in proggress
+streckenparts homogener machen - done
 sounds importieren und implementieren - done
 menü hübsch machen - to do
-Welle erstellen/hübsch machen - in proggress
+Welle erstellen/hübsch machen - done
 wenn auto in wand zu buggy -fixen - done
-credits - to do
+credits - done
 Logo machen - to do
