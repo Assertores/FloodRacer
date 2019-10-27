@@ -35,6 +35,8 @@ public class MenuHandler : Singleton<MenuHandler> {
 		r_bestScore.text = m_bestScore.ToString("F2") + "m";
 		r_lastScore.text = m_lastScore.ToString("F2") + "m";
 		Time.timeScale = 0;
+
+		ActivateMenu?.Invoke();
 	}
 
 	public void FinishLevel(float score) {

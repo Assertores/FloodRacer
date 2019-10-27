@@ -13,6 +13,7 @@ public class Controle : Singleton<Controle> {
 	[SerializeField] Transform r_car;
 	[SerializeField] AnimationCurve m_tsunamiNearingExeleration;
 
+	[SerializeField] GameObject r_ui;
 	[SerializeField] TextMeshProUGUI r_score;
 	[SerializeField] TextMeshProUGUI r_tsunamiDist;
 
@@ -59,6 +60,7 @@ public class Controle : Singleton<Controle> {
 	}
 
 	void OnLevelStart() {
+		r_ui.SetActive(true);
 		transform.position = new Vector3(0, 0, 0);
 		r_car.rotation = Quaternion.LookRotation(transform.forward);
 		r_source.enabled = true;
@@ -67,6 +69,7 @@ public class Controle : Singleton<Controle> {
 	}
 
 	void OnLoss() {
+		r_ui.SetActive(false);
 		r_source.enabled = false;
 		r_crash.enabled = false;
 		r_rb.isKinematic = true;
@@ -76,12 +79,19 @@ public class Controle : Singleton<Controle> {
 		r_score.text = transform.position.z.ToString("F2") + "m";
 		float dist = transform.position.z -FloodHandler.s_instance.transform.position.z;
 		if(dist < 98)
-			r_tsunamiDist.text = dist.ToString("F2") + "m";
+			r_tsunamiDist.text = "! " + dist.ToString("F2") + "m !";
 		else
 			r_tsunamiDist.text = "Far Away";
 
 		inputDir = new Vector2(Input.GetAxis(StringCollection.A_VERTICAL), Input.GetAxis(StringCollection.A_HORIZONTAL)).normalized;
-		Vector2 vel = new Vector2(r_rb.velocity.z, r_rb.velocity.x);
+		if(Input.touchCount > 0) {
+			Touch touch = Input.GetTouch(0);
+
+			inputDir = (touch.position - new Vector2(Screen.width / 2, Screen.height / 2)).normalized;
+			inputDir = new Vector2(inputDir.y, inputDir.x);
+		}
+
+			Vector2 vel = new Vector2(r_rb.velocity.z, r_rb.velocity.x);
 
 		if(inputDir.magnitude < 0.01f)
 			return;
