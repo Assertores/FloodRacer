@@ -706,6 +706,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   r_ui: {fileID: 4506800606930050084}
   r_score: {fileID: 6613575845569057088}
+  m_overHighScoreColor: {r: 0.5955155, g: 1, b: 0.5896226, a: 1}
   r_tsunamiDist: {fileID: 5388605884565540198}
   m_color:
     serializedVersion: 2

@@ -15,7 +15,7 @@ public class MenuHandler : Singleton<MenuHandler> {
 	public static System.Action ActivateMenu;
 	public static System.Action StartGame;
 
-	float m_bestScore;
+	public float m_bestScore { get; private set; }
 	float m_lastScore;
 
 	void Start() {

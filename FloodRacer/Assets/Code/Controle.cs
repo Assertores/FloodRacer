@@ -15,9 +15,11 @@ public class Controle : Singleton<Controle> {
 
 	[SerializeField] GameObject r_ui;
 	[SerializeField] TextMeshProUGUI r_score;
+	[SerializeField] Color m_overHighScoreColor;
 	[SerializeField] TextMeshProUGUI r_tsunamiDist;
 	[SerializeField] Gradient m_color;
 	Color m_normalColor;
+	Color m_scoreStartColor;
 
 	[SerializeField] AudioSource r_skid;
 	[SerializeField] AudioSource r_crash;
@@ -49,6 +51,7 @@ public class Controle : Singleton<Controle> {
 		//m_rb.velocity = new Vector3(0, 0, 1);
 
 		m_normalColor = m_color.Evaluate(1);
+		m_scoreStartColor = r_score.color;
 
 		MenuHandler.ActivateMenu += OnLoss;
 		MenuHandler.StartGame += OnLevelStart;
@@ -64,6 +67,7 @@ public class Controle : Singleton<Controle> {
 		r_car.rotation = Quaternion.LookRotation(transform.forward);
 		r_crash.enabled = true;
 		r_rb.isKinematic = false;
+		r_score.color = m_scoreStartColor;
 	}
 
 	void OnLoss() {
@@ -75,6 +79,9 @@ public class Controle : Singleton<Controle> {
 
 	void Update() {
 		r_score.text = transform.position.z.ToString("F2") + "m";
+		if(transform.position.z > MenuHandler.s_instance.m_bestScore)
+			r_score.color = m_overHighScoreColor;
+
 		float dist = transform.position.z -FloodHandler.s_instance.transform.position.z;
 		if(dist < FloodHandler.s_instance.maxDist - 2) {
 			r_tsunamiDist.text = "! " + dist.ToString("F2") + "m !";
