@@ -62,7 +62,9 @@ public class Controle : Singleton<Controle> {
 		tmp = ((RectTransform)(r_cross.transform)).position;
 
 #if !UNITY_ANDROID
+#if !UNITY_IPHONE
 		r_cross.SetActive(false);
+#endif
 #endif
 	}
 
@@ -146,9 +148,11 @@ public class Controle : Singleton<Controle> {
 		if(!r_crash.isPlaying) {
 			r_crash.clip = m_crashs[Random.Range(0, m_crashs.Length)];
 			r_crash.Play();
+#if UNITY_EDITOR
 			if(LogCreator.s_instance.doLog) {
 				LogCreator.s_instance.CurrentLog.crashes.Add(new Vector3(transform.position.x, transform.position.y, transform.position.z - GameManager.s_instance.m_currentZero));
 			}
+#endif
 		}
 	}
 }

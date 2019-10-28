@@ -41,9 +41,11 @@ public class FloodHandler : Singleton<FloodHandler> {
 		if(!h_death && dist < 0) {
 			h_death = true;
 			MenuHandler.s_instance.FinishLevel(Controle.s_instance.transform.position.z);
+#if UNITY_EDITOR
 			if(LogCreator.s_instance.doLog) {
 				LogCreator.s_instance.CurrentLog.death = new Vector3(Controle.s_instance.transform.position.x, Controle.s_instance.transform.position.y, Controle.s_instance.transform.position.z - GameManager.s_instance.m_currentZero);
 			}
+#endif
 		}
 
 		r_source.volume = Mathf.Lerp(1, 0, dist / m_maxDistToPlayer);
