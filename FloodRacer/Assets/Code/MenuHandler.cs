@@ -39,7 +39,12 @@ public class MenuHandler : Singleton<MenuHandler> {
 		ActivateMenu?.Invoke();
 	}
 
+	bool h_inMenu = true;
 	public void FinishLevel(float score) {
+		if(h_inMenu)
+			return;
+		h_inMenu = true;
+
 		ActivateMenu?.Invoke();
 
 		gameObject.SetActive(true);
@@ -56,6 +61,9 @@ public class MenuHandler : Singleton<MenuHandler> {
 	}
 
 	public void StartLevel() {
+		if(!h_inMenu)
+			return;
+		h_inMenu = false;
 
 		StartGame?.Invoke();
 		gameObject.SetActive(false);

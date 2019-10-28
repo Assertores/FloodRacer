@@ -23,6 +23,7 @@ public class FloodHandler : Singleton<FloodHandler> {
 
 	void DoRestart() {
 		transform.position = new Vector3(0,0, pos);
+		h_death = false;
 	}
 
 	private void Update() {
@@ -30,14 +31,20 @@ public class FloodHandler : Singleton<FloodHandler> {
 		transform.position += new Vector3(0, 0, m_acelleration.Evaluate(Time.timeSinceLevelLoad) * Time.deltaTime);
 	}
 
+	bool h_death = false;
 	private void FixedUpdate() {
 		float dist = Controle.s_instance.transform.position.z - transform.position.z;
 		if(dist > m_maxDistToPlayer) {
 			transform.position = new Vector3(0, 0, Controle.s_instance.transform.position.z - m_maxDistToPlayer);
 		}
 
-		if(dist < 0)
+		if(!h_death && dist < 0) {
+			h_death = true;
 			MenuHandler.s_instance.FinishLevel(Controle.s_instance.transform.position.z);
+			if(LogCreator.s_instance.doLog) {
+				LogCreator.s_instance.CurrentLog.death = new Vector3(Controle.s_instance.transform.position.x, Controle.s_instance.transform.position.y, Controle.s_instance.transform.position.z - GameManager.s_instance.m_currentZero);
+			}
+		}
 
 		r_source.volume = Mathf.Lerp(1, 0, dist / m_maxDistToPlayer);
 	}

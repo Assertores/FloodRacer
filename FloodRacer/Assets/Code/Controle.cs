@@ -66,10 +66,6 @@ public class Controle : Singleton<Controle> {
 #endif
 	}
 
-	private void OnDestroy() {
-		print("i got destroied");
-	}
-
 	void OnLevelStart() {
 		r_ui.SetActive(true);
 		transform.position = new Vector3(0, 0, 0);
@@ -147,8 +143,12 @@ public class Controle : Singleton<Controle> {
 	}
 
 	private void OnCollisionEnter(Collision collision) {
-		if(!r_crash.isPlaying)
+		if(!r_crash.isPlaying) {
 			r_crash.clip = m_crashs[Random.Range(0, m_crashs.Length)];
 			r_crash.Play();
+			if(LogCreator.s_instance.doLog) {
+				LogCreator.s_instance.CurrentLog.crashes.Add(new Vector3(transform.position.x, transform.position.y, transform.position.z - GameManager.s_instance.m_currentZero));
+			}
+		}
 	}
 }
