@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEditor;
 
 namespace FloodRacer {
-	[CustomEditor(typeof(Streat))]
+	[CustomEditor(typeof(StreatAsset))]
 	public class StreatEditor : Editor {
 		public override void OnInspectorGUI() {
-			Streat element = (target as Streat);
+			StreatAsset element = (target as StreatAsset);
 
 			EditorGUILayout.LabelField("References", EditorStyles.boldLabel);
 			for(int i = 0; i < element.prefabs.Length; i++) {
-				int newSize = EditorGUILayout.DelayedIntField(((StreatType)i).ToString(), element.prefabs[i].Length);
+				int newSize = EditorGUILayout.DelayedIntField(StringCollection.StreatTypeToString((StreatType)i), element.prefabs[i].Length);
 				if(newSize != element.prefabs[i].Length) {
 					GameObject[] tmp = new GameObject[newSize];
 					for(int index = 0; index < (newSize < element.prefabs[i].Length ? newSize : element.prefabs[i].Length); index++) {

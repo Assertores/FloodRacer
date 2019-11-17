@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEditor;
 
 namespace FloodRacer {
-	[CustomEditor(typeof(River))]
+	[CustomEditor(typeof(RiverAsset))]
 	public class RiverEditor : Editor {
 		public override void OnInspectorGUI() {
-			River element = (target as River);
+			RiverAsset element = (target as RiverAsset);
 
 			EditorGUILayout.LabelField("References", EditorStyles.boldLabel);
 			for(int i = 0; i < element.prefabs.Length; i++) {
-				int newSize = EditorGUILayout.DelayedIntField(((RiverType)i).ToString(), element.prefabs[i].Length);
+				int newSize = EditorGUILayout.DelayedIntField(StringCollection.RiverTypeToString((RiverType)i), element.prefabs[i].Length);
 				if(newSize != element.prefabs[i].Length) {
 					GameObject[] tmp = new GameObject[newSize];
 					for(int index = 0; index < (newSize < element.prefabs[i].Length ? newSize : element.prefabs[i].Length); index++) {
