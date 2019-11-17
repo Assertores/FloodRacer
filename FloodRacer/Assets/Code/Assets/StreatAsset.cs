@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace FloodRacer {
 	[CreateAssetMenu(fileName = "Streat", menuName = "Game/Streat")]
-	public class Streat : ScriptableObject {
+	public class StreatAsset : ScriptableObject {
 		[Header("References")]
 		public GameObject[][] prefabs = new GameObject[(int)StreatType.SIZE][];
 		[Header("Balancing")]
-		public WorldType world = WorldType.NON;
+		public WorldType world = WorldType.MANHATTAN;
 
-		public Streat() {
+		public StreatAsset() {
 			for(int i = 0; i < prefabs.Length; i++) {
 				prefabs[i] = new GameObject[0];
 			}

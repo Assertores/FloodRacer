@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace FloodRacer {
 	[CreateAssetMenu(fileName = "River", menuName = "Game/River")]
-	public class River : ScriptableObject {
+	public class RiverAsset : ScriptableObject {
 		[Header("References")]
 		public GameObject[][] prefabs = new GameObject[(int)RiverType.SIZE][];
 		[Header("Balancing")]
-		public WorldType world = WorldType.NON;
+		public WorldType world = WorldType.MANHATTAN;
 
-		public River() {
+		public RiverAsset() {
 			for(int i = 0; i < prefabs.Length; i++) {
 				prefabs[i] = new GameObject[0];
 			}

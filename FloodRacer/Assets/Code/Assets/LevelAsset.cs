@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace FloodRacer {
 	[CreateAssetMenu(fileName = "Level", menuName = "Game/Level")]
-	public class Level : ScriptableObject {
+	public class LevelAsset : ScriptableObject {
 		[Header("References")]
 		public GameObject prefab;
 		[Header("Balancing")]
-		public WorldType world = WorldType.NON;
+		public WorldType world = WorldType.MANHATTAN;
 		public float length;
-		public Level[] nextLevels;
+		public LevelAsset[] nextLevels;
 	}
 }

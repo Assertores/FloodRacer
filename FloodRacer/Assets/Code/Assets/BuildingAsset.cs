@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace FloodRacer {
 	[CreateAssetMenu(fileName = "Building", menuName = "Game/Building")]
-	public class Building : ScriptableObject {
+	public class BuildingAsset : ScriptableObject {
 		[Header("References")]
 		public GameObject prefab;
 		[Header("Balancing")]
-		public WorldType world = WorldType.NON;
-		public BuildingType type = BuildingType.NON;
+		public WorldType world = WorldType.MANHATTAN;
+		public BuildingType type = BuildingType.R1X1;
 	}
 }
