@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace FloodRacer {
-	public enum WorldType { NON, MANHATTAN, SAN_FRANCISCO, NEW_ORLEANS, TOKIO, BRASILIEN, AGYPTEN, CHINA_TOWN, FUTURE_TOWN, SIZE };
+	public enum WorldType { NON = 0, MANHATTAN, SAN_FRANCISCO, NEW_ORLEANS, TOKIO, BRASILIEN, AGYPTEN, CHINA_TOWN, FUTURE_TOWN, SIZE };
 
-	public enum BuildingType { NON, SPETIAL, R1X1, R1X2, R2X2, L2X2, R5X5, SIZE };
+	public enum BuildingType { NON = 0, SPETIAL, R1X1, R1X2, R2X2, L2X2, R5X5, SIZE };
 
-	public enum StreatType { NON, STARIGHT, CORNER, T, CORS, SIZE }
+	public enum StreatType { NON = 0, STARIGHT, CORNER, T, CORS, SIZE }
 
-	public enum RiverType { NON, STRAIGHT, CORNER, T, BRIDGE, SIZE }
+	public enum RiverType { NON = 0, STRAIGHT, CORNER, T, BRIDGE, SIZE }
 
 	public class world {
 		public GameObject[][] buildings; //building type array of that buildingtype
@@ -30,8 +30,29 @@ namespace FloodRacer {
 
 		world[] worlds = new world[(int)WorldType.SIZE];
 
+		public WorldType currentWorld { get; private set; }
+		public GameObject[][] currentBuildings { get; private set; }
+		public GameObject[][] currentStreats { get; private set; }
+		public GameObject[][] currentRiver { get; private set; }
+
 		private void Start() {
 			InitWorld();
+		}
+
+		public void ChangeWorld(WorldType newWorld = WorldType.NON) {
+			if(newWorld != WorldType.NON) {
+				currentWorld = newWorld;
+			} else {
+				currentWorld = (WorldType)Random.Range(1, (int)WorldType.SIZE);
+			}
+
+			RefereshCurrent();
+		}
+
+		public void RefereshCurrent() {
+			currentBuildings = worlds[(int)currentWorld].buildings;
+			currentStreats = worlds[(int)currentWorld].streats[Random.Range(0, worlds[(int)currentWorld].streats.Length)];
+			currentRiver = worlds[(int)currentWorld].rivers[Random.Range(0, worlds[(int)currentWorld].rivers.Length)];
 		}
 
 		void InitWorld() {
